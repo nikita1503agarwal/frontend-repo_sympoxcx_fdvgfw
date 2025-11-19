@@ -1,71 +1,155 @@
+import Hero from './components/Hero'
+import Section, { KPICards } from './components/Sections'
+import FeatureGrid from './components/FeatureGrid'
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <div className="min-h-screen bg-slate-950 text-slate-100">
+      <Hero />
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
+      <Section
+        id="executive-summary"
+        title="Executive Summary"
+        items={[
+          'Implement a unified AI system for client sentiment, performance intelligence, and automation across the customer journey.'
+        ]}
+      />
 
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
+      <FeatureGrid />
 
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
-          </div>
+      <Section
+        id="sentiment"
+        title="Multi-Channel Sentiment Intelligence"
+        items={[
+          { heading: 'Per-interaction insights', points: [
+            'Sentiment scoring & emotional indicators',
+            'Topic modelling & pain point extraction',
+            'Intent classification & churn-risk flags',
+            'Embedded summaries & workflow recommendations'
+          ]}
+        ]}
+      />
 
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
+      <Section
+        id="agent-performance"
+        title="Agent Performance Intelligence"
+        items={[
+          { heading: 'Performance & coaching', points: [
+            'Agent scoring framework',
+            'Tone, clarity, empathy analysis',
+            'Multi-tag classification & compliance',
+            'Coaching suggestions & training assignments',
+            'Department segmentation'
+          ]}
+        ]}
+      />
 
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
+      <Section
+        id="knowledge"
+        title="Knowledge Infrastructure"
+        items={[
+          { heading: 'Knowledge & automation', points: [
+            'Dynamic FAQ detection',
+            'AI-suggested articles and guides',
+            'Internal SOP ingestion & external knowledge creation',
+            'Intelligent search + chatbot integration'
+          ]}
+        ]}
+      />
 
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
-            </div>
-          </div>
+      <Section
+        id="chatbots"
+        title="AI Chatbots"
+        items={[
+          { heading: 'RAG-powered automation', points: [
+            'Retrieval-augmented across knowledge sources',
+            'Customer support deflection & internal support',
+            'Real-time coaching & suggestions',
+            'Escalation logic based on sentiment'
+          ]}
+        ]}
+      />
 
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
-          </div>
+      <Section
+        id="dashboards"
+        title="Leadership Dashboards"
+        items={[
+          { heading: 'Visibility & forecasting', points: [
+            'Customer Journey Health Score',
+            'Agent Performance Heatmaps & Department Trends',
+            'Escalation & SLA tracking',
+            'Process bottlenecks & predictive churn'
+          ]}
+        ]}
+      />
+
+      <Section
+        id="phases"
+        title="Implementation Phases"
+        items={[
+          { heading: 'Phased rollout', points: [
+            'Phase 1: Discovery & Architecture',
+            'Phase 2: Data Ingestion Pipelines',
+            'Phase 3: AI Processing Models',
+            'Phase 4: Knowledge Base Automation',
+            'Phase 5: Dashboards & Reporting',
+            'Phase 6: AI Chatbots & Automations',
+            'Phase 7: Testing, QA & Rollout'
+          ]}
+        ]}
+      />
+
+      <KPICards
+        items={[
+          'Reduction in negative sentiment',
+          'Faster issue resolution',
+          'Lower support costs',
+          'Higher customer satisfaction',
+          'Improved agent performance',
+          'Increased retention & revenue protection'
+        ]}
+      />
+
+      <Section
+        id="risks"
+        title="Risks & Mitigation"
+        items={[
+          { heading: 'Mitigation strategy', points: [
+            'Data quality: enforced validation rules',
+            'API failure: fallback pipelines',
+            'User adoption: training & onboarding',
+            'Security: strict permissioning & encryption'
+          ]}
+        ]}
+      />
+
+      <Section
+        id="roi"
+        title="ROI Justification"
+        items={[
+          'Replaces manual QA, fragmented reporting, multiple coaching tools, inefficient workflows, and slow decision-making — delivering significant savings and a better experience for customers and staff.'
+        ]}
+      />
+
+      <Section
+        id="enhancements"
+        title="Recommended Enhancements"
+        items={[
+          { heading: 'Next-level capabilities', points: [
+            'Real-time call coaching',
+            'Customer journey forecasting',
+            'Retrieval-based executive briefings',
+            'Competitor sentiment tracking'
+          ]}
+        ]}
+      />
+
+      <footer className="py-10 border-t border-white/10 bg-slate-950/60">
+        <div className="max-w-6xl mx-auto px-6 text-white/70 text-sm flex flex-wrap gap-4 items-center justify-between">
+          <p>AI-Automation Consultant Proposal</p>
+          <a href="/test" className="underline hover:text-white">Backend & Database Test</a>
         </div>
-      </div>
+      </footer>
     </div>
   )
 }
